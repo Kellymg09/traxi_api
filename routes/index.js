@@ -6,9 +6,10 @@ const mongoose = require('mongoose');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+const uri = "mongodb+srv://gonzalezkellymichelle:xNYqyF56LLKU46ie@cluster0.a8zxm9y.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/traxi_test";
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/traxi_test', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
